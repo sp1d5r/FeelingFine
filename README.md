@@ -14,9 +14,16 @@ As with any of my personal projects, my thought process will be recorded here, a
 completed later. 
 
 ## Contents 
-* Introduction 
-* Citations
-* Social Media
+* [Introduction](https://github.com/sp1d5r/FeelingFine#introduction)
+* [Data pre-processing](https://github.com/sp1d5r/FeelingFine#data-pre-processing)
+* [Loading Data Set](https://github.com/sp1d5r/FeelingFine#loading-data-set)
+* [Initialising the MLP](https://github.com/sp1d5r/FeelingFine#initialising-the-mlp)
+* [Training the Model](https://github.com/sp1d5r/FeelingFine#training-the-model)
+* [Results](https://github.com/sp1d5r/FeelingFine#results)
+* [Saving and Loading the Model](https://github.com/sp1d5r/FeelingFine#saving-and-loading-the-model)
+* [Testing custom files](https://github.com/sp1d5r/FeelingFine#testing-custom-files)
+* [Citations](https://github.com/sp1d5r/FeelingFine#citations)
+* [Social Media](https://github.com/sp1d5r/FeelingFine#social-media)
 
 ## Introduction 
 So this will be my first solo attempt at a neural network project so a lot of the methods and techniques 
