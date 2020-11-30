@@ -1,4 +1,4 @@
-#Feeling Fine?
+# Feeling Fine?
 A project used to recognise emotions from speech - I'm sure you've been in a position where 
 someone you care for has hit you with the "I'm fine!", but does that really mean they are fine?
 
