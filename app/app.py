@@ -1,11 +1,10 @@
 from time import sleep
-
 from flask import Flask, flash, request, redirect, url_for, render_template, abort
-import librosa                                             # Audio analyser
-import soundfile                                           # Read the audio files
+# import librosa                                             # Audio analyser
+# import soundfile                                           # Read the audio files
 import pickle                                               # Deal with files
-import numpy as np                                         # Numpy used to manipulate dataframes
-import sys
+#  import numpy as np                                         # Numpy used to manipulate dataframes
+
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -14,37 +13,38 @@ app.config['UPLOAD_EXTENSIONS'] = ['.wav', '.mp3', '.aac', '.flac']
 app.config['UPLOAD_PATH'] = 'uploads'
 
 # Loading the Model
-loaded_model = pickle.load(open('emotion-model.sav', 'rb'))
+# loaded_model = pickle.load(open('emotion-model.sav', 'rb'))
 
 
 def extract_feature(file_name, chroma, mfcc, mel, spec_centroid, spec_bandwidth, spec_contrast, roll_off):
-    with soundfile.SoundFile(file_name) as sound_file:
-        raw_audio = sound_file.read(dtype="float32")
-        sample_rate = sound_file.samplerate
-        extracted_features = np.array([])
-        stft = np.abs(librosa.stft(raw_audio))
-        if chroma:
-            chroma = np.mean(librosa.feature.chroma_stft(S=stft, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, chroma))
-        if mfcc:
-            mfccs=np.mean(librosa.feature.mfcc(y=raw_audio, sr=sample_rate, n_mfcc=40).T, axis=0)
-            extracted_features = np.hstack((extracted_features, mfccs))
-        if mel:
-            mel = np.mean(librosa.feature.melspectrogram(raw_audio, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, mel))
-        if spec_centroid:
-            spec_centroid = np.mean(librosa.feature.spectral_centroid(y=raw_audio, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, spec_centroid))
-        if spec_bandwidth:
-            spec_bandwidth = np.mean(librosa.feature.spectral_bandwidth(y=raw_audio, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, spec_bandwidth))
-        if spec_contrast:
-            spec_contrast = np.mean(librosa.feature.spectral_contrast(y=raw_audio, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, spec_contrast))
-        if roll_off:
-            roll_off = np.mean(librosa.feature.spectral_rolloff(y=raw_audio, sr=sample_rate).T,axis=0)
-            extracted_features = np.hstack((extracted_features, roll_off))
-    return extracted_features
+    # with soundfile.SoundFile(file_name) as sound_file:
+    #     raw_audio = sound_file.read(dtype="float32")
+    #     sample_rate = sound_file.samplerate
+    #     extracted_features = np.array([])
+    #     stft = np.abs(librosa.stft(raw_audio))
+    #     if chroma:
+    #         chroma = np.mean(librosa.feature.chroma_stft(S=stft, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, chroma))
+    #     if mfcc:
+    #         mfccs=np.mean(librosa.feature.mfcc(y=raw_audio, sr=sample_rate, n_mfcc=40).T, axis=0)
+    #         extracted_features = np.hstack((extracted_features, mfccs))
+    #     if mel:
+    #         mel = np.mean(librosa.feature.melspectrogram(raw_audio, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, mel))
+    #     if spec_centroid:
+    #         spec_centroid = np.mean(librosa.feature.spectral_centroid(y=raw_audio, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, spec_centroid))
+    #     if spec_bandwidth:
+    #         spec_bandwidth = np.mean(librosa.feature.spectral_bandwidth(y=raw_audio, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, spec_bandwidth))
+    #     if spec_contrast:
+    #         spec_contrast = np.mean(librosa.feature.spectral_contrast(y=raw_audio, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, spec_contrast))
+    #     if roll_off:
+    #         roll_off = np.mean(librosa.feature.spectral_rolloff(y=raw_audio, sr=sample_rate).T,axis=0)
+    #         extracted_features = np.hstack((extracted_features, roll_off))
+    # return extracted_features
+    return None
 
 
 def load_custom_audio_file(filename):
@@ -61,13 +61,13 @@ def predict_for_file(filename):
 SubmitButtonColor = {
   "Submit" : "#F5DCE0",
   'neutral': "#EAEAEA",
-  'calm': '#FFFFB5',       # file name XX-XX-02 = calm
-  'happy': '#CCE2CB',      # file name XX-XX-03 = happy
-  'sad': '#FFAEA5',        # file name XX-XX-04 = sad
-  'angry': '#FF968A',      # file name XX-XX-05 = angry
-  'fearful': '#CBAACB',    # file name XX-XX-06 = fearful
-  'disgust': '#97C1A9',    # file name XX-XX-07 = disgust
-  'surprised': '#FFC8A2'   # file name XX-XX-08 = surprised
+  'calm': '#FFFFB5',
+  'happy': '#CCE2CB',
+  'sad': '#FFAEA5',
+  'angry': '#FF968A',
+  'fearful': '#CBAACB',
+  'disgust': '#97C1A9',
+  'surprised': '#FFC8A2'
 }
 
 
