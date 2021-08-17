@@ -123,7 +123,7 @@
             margin-right: auto;
             text-align: center;">Select an audio file and get the emotions hidden behind it using AI and ML  </p>
 
-        <form method=post enctype=multipart/form-data style="
+        <form method="post" action="/" enctype="multipart/form-data" style="
             width: 70%;
             height: 56px;
             margin-left:auto;
@@ -132,10 +132,20 @@
             border-radius: 5px 22px 28px 5px;
             display: flex;
             ">
-            <input type="file" id="actual-btn" hidden/>
-            <input type="submit" id="submit" hidden>
-            <label class="file-select" for="actual-btn"><span id="file-chosen">Choose File</span></label>
-            <button class="btn" type="submit" style="width: 20%; height:100%; background:#F5DCE0; border-radius: 0px 17px 17px 0px;">Go!</button>
+            <input type="file" name="file" id="actual-btn" hidden/>
+            <label class="file-select" for="actual-btn"><span id="file-chosen">{{filename}}</span></label>
+
+            <input class="btn"
+                   type="submit"
+                   id="submit"
+                   style="width: 20%;
+                   height:100%;
+                   background:{{result}};
+                   border-radius: 0px 17px 17px 0px;"
+                   value={{value}}
+            >
+
+            </input>
 
 
         </form>
