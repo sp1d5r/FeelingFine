@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Feeling Fine</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <!-- CSS only -->
+        <style>
+        body {
+            background: #E4A0B7;
+            overflow: hidden;
+        }
+        .circle {
+            height: 50px;
+            width: 50px;
+            background: rgba(239, 207, 212, 0.44);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+        }
+        .file-select {
+            width: 80%;
+            height:100%;
+            background:#FFFFFF;
+            border-radius: 5px 0px 0px 5px;
+            font-weight: 300;
+            font-size: 23px;
+            color: #000000;
+            font-family: sans-serif;
+            cursor: pointer;
+            padding: 12px;
+            padding-left: 20px;
+        }
+
+        </style>
+        <script type="text/javascript" src="{{url_for('static', filename='index.js')}}">
+
+        </script>
+    </head>
+    <body>
+        <!------ This is the background layout -->
+        <div style="z-index: -1;">
+            <!------ Left Hand Side Circles -->
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 83px;
+             height: 83px;
+             left: 14px;
+             bottom: 516px;
+             z-index: -1;" ></div>
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 126px;
+             height: 126px;
+             left: 138px;
+             bottom: 380px;
+             z-index: -1;" ></div>
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 256px;
+             height: 256px;
+             left: -47px;
+             bottom: 120px;
+             z-index: -1;" ></div>
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 330px;
+             height: 330px;
+             left: 44px;
+             bottom: -200px;
+             z-index: -1;" ></div>
+
+            <!------ Right Hand Side Circles -->
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 330px;
+             height: 330px;
+             right: 22px;
+             bottom: -42px;
+             z-index: -1;" ></div>
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 126px;
+             height: 126px;
+             right: 7px;
+             bottom: 298px;
+             z-index: -1;" ></div>
+            <div class="circle"
+             style="font-size:50px;
+             position:absolute;
+             width: 83px;
+             height: 83px;
+             right: 226px;
+             bottom: 435px;
+             z-index: -1;" ></div>
+        </div>
+
+
+
+        <div style="width: 35%; margin-top: 5%">
+            <h1 style="width: 500%;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 70px;
+            color: #FFFFFF; padding-left: 20%; margin-bottom: 0px">Feeling Fine</h1>
+            <div style="width: 631.06px;
+                height: 8px;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"></div>
+        </div>
+        <p style="margin-top: 100px;
+            margin-bottom: 100px;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 21px;
+            color: #FFFFFF;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;">Select an audio file and get the emotions hidden behind it using AI and ML  </p>
+
+        <form method=post enctype=multipart/form-data style="
+            width: 70%;
+            height: 56px;
+            margin-left:auto;
+            margin-right: auto;
+            background: #FFFFFF;
+            border-radius: 5px 22px 28px 5px;
+            display: flex;
+            ">
+            <input type="file" id="actual-btn" hidden/>
+            <input type="submit" id="submit" hidden>
+            <label class="file-select" for="actual-btn"><span id="file-chosen">Choose File</span></label>
+            <button class="btn" type="submit" style="width: 20%; height:100%; background:#F5DCE0; border-radius: 0px 17px 17px 0px;">Go!</button>
+
+
+        </form>
+
+        <!---
+        <form method="POST" action="" enctype="multipart/form-data">
+          <p><input type="file" name="file"></p>
+          <p><input type="submit" value="Submit"></p>
+        </form>
+         -->
+        <div class="App" style="color: #FFFFFF; margin-top: 100px; text-align: center">
+            <div class="bg-transparent list-group list-group-flush"></div>
+            <br>
+            <p>Follow me on my social media accounts:</p>
+            <a href="https://www.snapchat.com/add/elijah.ahmad" style="color: inherit; text-decoration: none;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm169.5 338.9c-3.5 8.1-18.1 14-44.8 18.2-1.4 1.9-2.5 9.8-4.3 15.9-1.1 3.7-3.7 5.9-8.1 5.9h-.2c-6.2 0-12.8-2.9-25.8-2.9-17.6 0-23.7 4-37.4 13.7-14.5 10.3-28.4 19.1-49.2 18.2-21 1.6-38.6-11.2-48.5-18.2-13.8-9.7-19.8-13.7-37.4-13.7-12.5 0-20.4 3.1-25.8 3.1-5.4 0-7.5-3.3-8.3-6-1.8-6.1-2.9-14.1-4.3-16-13.8-2.1-44.8-7.5-45.5-21.4-.2-3.6 2.3-6.8 5.9-7.4 46.3-7.6 67.1-55.1 68-57.1 0-.1.1-.2.2-.3 2.5-5 3-9.2 1.6-12.5-3.4-7.9-17.9-10.7-24-13.2-15.8-6.2-18-13.4-17-18.3 1.6-8.5 14.4-13.8 21.9-10.3 5.9 2.8 11.2 4.2 15.7 4.2 3.3 0 5.5-.8 6.6-1.4-1.4-23.9-4.7-58 3.8-77.1C183.1 100 230.7 96 244.7 96c.6 0 6.1-.1 6.7-.1 34.7 0 68 17.8 84.3 54.3 8.5 19.1 5.2 53.1 3.8 77.1 1.1.6 2.9 1.3 5.7 1.4 4.3-.2 9.2-1.6 14.7-4.2 4-1.9 9.6-1.6 13.6 0 6.3 2.3 10.3 6.8 10.4 11.9.1 6.5-5.7 12.1-17.2 16.6-1.4.6-3.1 1.1-4.9 1.7-6.5 2.1-16.4 5.2-19 11.5-1.4 3.3-.8 7.5 1.6 12.5.1.1.1.2.2.3.9 2 21.7 49.5 68 57.1 4 1 7.1 5.5 4.9 10.8z"></path></svg> Snapchat - @Elijah.Ahmad</a><br><a href="https://www.instagram.com/ElijahAhmad__" style="color: inherit; text-decoration: none;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg> Instagram - @ElijahAhmad__</a><br><a href="https://www.facebook.com/elijah.ahmad.71" style="color: inherit; text-decoration: none;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg> FaceBook - Elijah Ahmad</a><br><a href="https://www.linkedin.com/in/elijah-ahmad-658a2b199/" style="color: inherit; text-decoration: none;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg> Linkden - Elijah Ahmad</a><br><a href="https://github.com/sp1d5r" style="color: inherit; text-decoration: none;"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> GitHub - @sp1d5r</a></div>
+    </body>
+</html>
