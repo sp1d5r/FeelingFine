@@ -13,7 +13,7 @@ app.config['UPLOAD_EXTENSIONS'] = ['.wav', '.mp3', '.aac', '.flac']
 app.config['UPLOAD_PATH'] = 'uploads'
 
 # Loading the Model
-# loaded_model = pickle.load(open('emotion-model.sav', 'rb'))
+loaded_model = pickle.load(open('emotion-model.sav', 'rb'))
 
 
 def extract_feature(file_name, chroma, mfcc, mel, spec_centroid, spec_bandwidth, spec_contrast, roll_off):
