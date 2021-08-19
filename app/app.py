@@ -3,7 +3,7 @@ from flask import Flask, flash, request, redirect, url_for, render_template, abo
 # import librosa                                             # Audio analyser
 # import soundfile                                           # Read the audio files
 import pickle                                               # Deal with files
-#  import numpy as np                                         # Numpy used to manipulate dataframes
+import numpy as np                                         # Numpy used to manipulate dataframes
 
 
 app = Flask(__name__, static_url_path='/static')
