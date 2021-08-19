@@ -30,6 +30,41 @@
             padding-left: 20px;
         }
 
+        @keyframes bubble1 {
+          from {bottom: -516px;}
+          to {bottom: 516px;}
+        }
+
+        @keyframes bubble2 {
+          from {bottom: -516px;}
+          to {bottom: 380px;}
+        }
+
+        @keyframes bubble3 {
+          from {bottom: -516px;}
+          to {bottom: 120px;}
+        }
+
+        @keyframes bubble4 {
+          from {bottom: -516px;}
+          to {bottom: -200px;}
+        }
+
+        @keyframes bubble5 {
+          from {bottom: -516px;}
+          to {bottom: -42px;}
+        }
+
+        @keyframes bubble6 {
+          from {bottom: -516px;}
+          to {bottom: 298px;}
+        }
+
+        @keyframes bubble7 {
+          from {bottom: -516px;}
+          to {bottom: 435px;}
+        }
+
         </style>
         <script type="text/javascript" src="{{url_for('static', filename='index.js')}}">
 
@@ -46,7 +81,9 @@
              height: 83px;
              left: 14px;
              bottom: 516px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble1;
+             animation-duration: 4s;" ></div>
             <div class="circle"
              style="font-size:50px;
              position:absolute;
@@ -54,7 +91,9 @@
              height: 126px;
              left: 138px;
              bottom: 380px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble2;
+             animation-duration: 4s;" ></div>
             <div class="circle"
              style="font-size:50px;
              position:absolute;
@@ -62,7 +101,9 @@
              height: 256px;
              left: -47px;
              bottom: 120px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble3;
+             animation-duration: 4s;" ></div>
             <div class="circle"
              style="font-size:50px;
              position:absolute;
@@ -70,7 +111,9 @@
              height: 330px;
              left: 44px;
              bottom: -200px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble4;
+             animation-duration: 4s;" ></div>
 
             <!------ Right Hand Side Circles -->
             <div class="circle"
@@ -80,7 +123,9 @@
              height: 330px;
              right: 22px;
              bottom: -42px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble5;
+             animation-duration: 4s;" ></div>
             <div class="circle"
              style="font-size:50px;
              position:absolute;
@@ -88,7 +133,9 @@
              height: 126px;
              right: 7px;
              bottom: 298px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble6;
+             animation-duration: 4s;" ></div>
             <div class="circle"
              style="font-size:50px;
              position:absolute;
@@ -96,7 +143,9 @@
              height: 83px;
              right: 226px;
              bottom: 435px;
-             z-index: -1;" ></div>
+             z-index: -1;
+             animation-name: bubble7;
+             animation-duration: 4s;" ></div>
         </div>
 
 
